@@ -1,9 +1,10 @@
 # server-test-webapp
-> echo server information/server IO test ...
+> echo server information/server io test ...
 
 ### docker images
 * https://hub.docker.com/repository/docker/javawiki/server-test-webapp
-* docker pull javawiki/server-test-webapp:1.0.2
+* docker build -f Dockerfile -t javawiki/server-test-webapp:1.0.3 .
+* docker pull javawiki/server-test-webapp:1.0.3
 
 ### Reference Documentation
 

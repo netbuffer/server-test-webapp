@@ -4,3 +4,10 @@ server:
 spring:
   application:
     name: server-test-webapp
+
+logging:
+  file:
+    name: ${spring.application.name}.log
+  level:
+    cn:
+      netbuffer: debug

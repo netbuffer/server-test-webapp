@@ -6,6 +6,12 @@
 * docker build -f Dockerfile -t javawiki/server-test-webapp:1.0.3 .
 * docker pull javawiki/server-test-webapp:1.0.3
 
+### web api for test
+* curl "http://localhost:9800/server/io/write?path=/root/test.txt&message=hello"
+* curl "http://localhost:9800/server/io/read?path=/root/test.txt"
+* curl "http://localhost:9800/server/info/properties"
+* curl "http://localhost:9800/server/info/env"
+
 ### Reference Documentation
 
 For further reference, please consider the following sections:

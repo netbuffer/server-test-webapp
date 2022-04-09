@@ -11,3 +11,16 @@ logging:
   level:
     cn:
       netbuffer: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+info:
+  app:
+    name: @project.name@
+  image:
+    type: docker
+    version: @project.version@

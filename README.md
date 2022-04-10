@@ -11,6 +11,7 @@
 * curl "http://localhost:9800/server/io/read?path=/root/test.txt"
 * curl "http://localhost:9800/server/info/properties"
 * curl "http://localhost:9800/server/info/env"
+* curl "http://localhost:9800/actuator/info"
 
 ### Reference Documentation
 

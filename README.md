@@ -3,8 +3,8 @@
 
 ### docker images
 * https://hub.docker.com/repository/docker/javawiki/server-test-webapp
-* docker build -f Dockerfile -t javawiki/server-test-webapp:1.0.4 .
-* docker pull javawiki/server-test-webapp:1.0.4
+* docker build -f Dockerfile -t javawiki/server-test-webapp:version .
+* docker pull javawiki/server-test-webapp:version
 
 ### web api for test
 * curl "http://localhost:9800/server/io/write?path=/root/test.txt&message=hello"

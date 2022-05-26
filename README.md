@@ -3,14 +3,17 @@
 
 ### docker images
 * https://hub.docker.com/repository/docker/javawiki/server-test-webapp
-* docker build -f Dockerfile -t javawiki/server-test-webapp:1.0.4 .
-* docker pull javawiki/server-test-webapp:1.0.4
+* docker build -f Dockerfile -t javawiki/server-test-webapp:version .
+* docker login
+* docker push javawiki/server-test-webapp:version
+* docker pull javawiki/server-test-webapp:version
 
 ### web api for test
 * curl "http://localhost:9800/server/io/write?path=/root/test.txt&message=hello"
 * curl "http://localhost:9800/server/io/read?path=/root/test.txt"
 * curl "http://localhost:9800/server/info/properties"
 * curl "http://localhost:9800/server/info/env"
+* curl "http://localhost:9800/actuator/info"
 
 ### Reference Documentation
 
@@ -24,7 +27,7 @@ For further reference, please consider the following sections:
 ### Guides
 
 The following guides illustrate how to use some features concretely:
-
+* https://docs.spring.io/spring-boot/docs/2.6.6/reference/htmlsingle/
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)

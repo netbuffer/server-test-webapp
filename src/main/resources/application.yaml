@@ -7,7 +7,7 @@ spring:
 
 logging:
   file:
-    name: ${spring.application.name}.log
+    name: stw.log
   level:
     cn:
       netbuffer: debug

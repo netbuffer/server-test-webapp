@@ -7,6 +7,7 @@
 * docker login
 * docker push javawiki/server-test-webapp:version
 * docker pull javawiki/server-test-webapp:version
+* docker run -it --rm -p 9800:9800 javawiki/server-test-webapp:version
 
 ### web api for test
 * curl "http://localhost:9800/server/io/write?path=/root/test.txt&message=hello"

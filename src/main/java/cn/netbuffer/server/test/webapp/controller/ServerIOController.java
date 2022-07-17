@@ -1,15 +1,20 @@
 package cn.netbuffer.server.test.webapp.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.shell.standard.ShellComponent;
+import org.springframework.shell.standard.ShellMethod;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 @Slf4j
 @RestController
+@ShellComponent
 @RequestMapping("/server/io")
 public class ServerIOController {
 
@@ -30,6 +35,17 @@ public class ServerIOController {
         fileInputStream.read(message);
         fileInputStream.close();
         return new String(message);
+    }
+
+    @GetMapping("diskspace")
+    @ShellMethod(value = "get diskspace info from path", key = "diskspace")
+    public void diskspace(@RequestParam(required = false, defaultValue = ".") String path) {
+        File file = new File(path);
+        long usableSpace = file.getUsableSpace();
+        long totalSpace = file.getTotalSpace();
+        long freeSpace = file.getFreeSpace();
+        log.debug("path[{}] usableSpace={} totalSpace={} freeSpace={}", file.getAbsolutePath(), usableSpace, totalSpace, freeSpace);
+        System.out.println("path=" + file.getAbsolutePath() + " usableSpace=" + usableSpace + " totalSpace=" + totalSpace + " freeSpace=" + freeSpace);
     }
 
 }

@@ -1,9 +1,11 @@
 package cn.netbuffer.server.test.webapp.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,6 +20,27 @@ import java.util.Properties;
 @RestController
 @RequestMapping("/server/info")
 public class ServerInfoController {
+
+    @Resource
+    private Environment environment;
+
+    @GetMapping("getActiveProfiles")
+    public String[] getActiveProfiles() {
+        log.debug("get getActiveProfiles");
+        return environment.getActiveProfiles();
+    }
+
+    @GetMapping("getDefaultProfiles")
+    public String[] getDefaultProfiles() {
+        log.debug("get getDefaultProfiles");
+        return environment.getDefaultProfiles();
+    }
+
+    @GetMapping("getProperty")
+    public String getProperty(String key) {
+        log.debug("get getDefaultProfiles");
+        return environment.getProperty(key);
+    }
 
     @GetMapping("properties")
     public Properties properties() {

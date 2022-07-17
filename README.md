@@ -8,6 +8,7 @@
 * docker push javawiki/server-test-webapp:version
 * docker pull javawiki/server-test-webapp:version
 * docker run -it --rm -p 9800:9800 javawiki/server-test-webapp:version
+* docker run -it --rm -p 9800:9800 -e APP_VERSION=v1.0.7 javawiki/server-test-webapp:1.0.7
 
 ### web api for test
 * curl "http://localhost:9800/server/io/write?path=/root/test.txt&message=hello"
@@ -15,6 +16,7 @@
 * curl "http://localhost:9800/server/info/properties"
 * curl "http://localhost:9800/server/info/env"
 * curl "http://localhost:9800/actuator/info"
+* curl "http://localhost:9800/server/info/getProperty?key=info.app.version"
 
 ### Reference Documentation
 

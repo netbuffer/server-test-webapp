@@ -26,6 +26,8 @@ management:
 info:
   app:
     name: @project.name@
+    # read from environment
+    version: ${APP_VERSION:v1.0.0}
   image:
     type: docker
     version: @project.version@

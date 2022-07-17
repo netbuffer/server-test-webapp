@@ -2,7 +2,7 @@
 > echo server information/server io test ...
 
 ### docker images
-* https://hub.docker.com/repository/docker/javawiki/server-test-webapp
+* https://hub.docker.com/r/javawiki/server-test-webapp
 * docker build -f Dockerfile -t javawiki/server-test-webapp:version .
 * docker login
 * docker push javawiki/server-test-webapp:version

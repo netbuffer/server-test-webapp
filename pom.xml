@@ -12,7 +12,7 @@
 
     <groupId>cn.netbuffer</groupId>
     <artifactId>server-test-webapp</artifactId>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
 
     <name>server-test-webapp</name>
     <description>server-test-webapp</description>
@@ -76,6 +76,36 @@
                     <execution>
                         <goals>
                             <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.40.1</version>
+                <configuration>
+                    <dockerHost>tcp://127.0.0.1:2375</dockerHost>
+                    <pullRegistry>registry.hub.docker.com/library</pullRegistry>
+                    <imagePullPolicy>IfNotPresent</imagePullPolicy>
+                    <authConfig>
+                        <username>${dockerRegistry.username}</username>
+                        <password>${dockerRegistry.password}</password>
+                    </authConfig>
+                    <images>
+                        <image>
+                            <name>javawiki/${project.name}:${project.version}</name>
+                            <build>
+                                <dockerFileDir>${project.basedir}</dockerFileDir>
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>docker-build</id>
+                        <goals>
+                            <goal>build</goal>
                         </goals>
                     </execution>
                 </executions>

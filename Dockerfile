@@ -1,6 +1,6 @@
-FROM openjdk:8-alpine
-LABEL author="netbuffer" version="1.0"
+FROM openjdk:8-slim-buster
+LABEL author="netbuffer"
 WORKDIR /
 ADD target/server-test-webapp.jar /
 EXPOSE 9100
-ENTRYPOINT java -jar /server-test-webapp.jar
+ENTRYPOINT java ${JAVA_OPTS} -jar /server-test-webapp.jar

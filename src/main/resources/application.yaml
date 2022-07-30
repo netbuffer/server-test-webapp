@@ -1,5 +1,5 @@
 server:
-  port: 9800
+  port: ${STW_SERVER_PORT:9800}
 
 spring:
   application:

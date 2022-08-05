@@ -1,4 +1,4 @@
-FROM openjdk:8-slim-buster
+FROM apache/skywalking-java-agent:8.11.0-java8
 LABEL author="netbuffer"
 WORKDIR /
 ADD target/server-test-webapp.jar /

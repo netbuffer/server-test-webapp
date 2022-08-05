@@ -81,7 +81,7 @@
                 <version>0.40.1</version>
                 <configuration>
                     <dockerHost>tcp://127.0.0.1:2375</dockerHost>
-                    <pullRegistry>registry.hub.docker.com/library</pullRegistry>
+                    <pullRegistry>registry.hub.docker.com</pullRegistry>
                     <imagePullPolicy>IfNotPresent</imagePullPolicy>
                     <authConfig>
                         <username>${dockerRegistry.username}</username>
@@ -89,7 +89,7 @@
                     </authConfig>
                     <images>
                         <image>
-                            <name>javawiki/${project.name}:${project.version}</name>
+                            <name>javawiki/${project.name}:${project.version}-sw-8.11.0-java8</name>
                             <build>
                                 <dockerFileDir>${project.basedir}</dockerFileDir>
                             </build>

@@ -1,0 +1,5 @@
+### /actuator
+GET http://localhost:9800/actuator
+
+### /task/sleep
+GET http://localhost:9800/task/sleep?sleep=60

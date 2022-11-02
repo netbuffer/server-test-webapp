@@ -13,8 +13,9 @@ public class TaskController {
 
     @GetMapping("sleep")
     public Long sleep(Long sleep) throws InterruptedException {
+        log.debug("receive task for sleep {} second", sleep);
         TimeUnit.SECONDS.sleep(sleep);
-        log.debug("sleep for {} second", sleep);
+        log.debug("successfully sleep for {} second", sleep);
         return sleep;
     }
 

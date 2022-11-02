@@ -12,7 +12,7 @@
 
     <groupId>cn.netbuffer</groupId>
     <artifactId>server-test-webapp</artifactId>
-    <version>1.0.9</version>
+    <version>1.1.0</version>
 
     <name>server-test-webapp</name>
     <description>server-test-webapp</description>

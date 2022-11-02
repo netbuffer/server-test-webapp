@@ -13,6 +13,9 @@ logging:
       netbuffer: debug
 
 management:
+  endpoint:
+    shutdown:
+      enabled: true
   endpoints:
     web:
       exposure:

@@ -3,3 +3,9 @@ GET http://localhost:9800/actuator
 
 ### /task/sleep
 GET http://localhost:9800/task/sleep?sleep=60
+
+### /server/info/env
+GET http://localhost:9800/server/info/env
+
+### /server/info/properties
+GET http://localhost:9800/server/info/properties
